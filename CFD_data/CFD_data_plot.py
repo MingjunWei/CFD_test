@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.dates as mdates
 #%% Load the CSV file
-file_path = 'D:/GitHub/CFD_test/CFD_data/test_original_v2.csv'
+# file_path = 'D:/GitHub/CFD_test/CFD_data/test_original_v2.csv'
+file_path = 'test_original_v2.csv'
 try:
     data = pd.read_csv(file_path)
 except UnicodeDecodeError:
@@ -125,7 +126,8 @@ for level in range(1, 6):
 
 #%% Contour plot for temp at chest level
 # Select the specific rows from 485 to 540 with a step of 5
-rows_of_interest = np.arange(485, 541, 5)
+# rows_of_interest = np.arange(485, 541, 5)
+rows_of_interest = np.arange(2060, 2116, 5)
 selected_data = data.iloc[rows_of_interest]
 
 # Prepare the x, y, and temperature data for contour plotting
@@ -174,5 +176,6 @@ cbar = fig.colorbar(contour,
                     aspect=50)
 cbar.set_label('Temperature [C]', fontsize=14)
 # save figure
-file_path = 'D:/GitHub/CFD_test/CFD_data/Tempe_contour_chest Level.png'
-plt.savefig(file_path)
+# file_path = 'D:/GitHub/CFD_test/CFD_data/Tempe_contour_chest Level.png'
+# plt.savefig(file_path)
+plt.savefig('Tempe_contour_chest Level.png')
